@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+      }
+      #note {
+        background-color: #b3b3ff;
+        width: 200px;
+        margin-left: 20px;
+        margin-top: 20px;
+        padding-left: 30px;
+        border: 5px solid black;
+      }
+      #coins {
+        top: 10px;
+        background-color: #ccffcc;
+        width: 200px;
+        padding-left: 30px;
+        border: 5px solid black;
+        margin: 20px;
+      }
+
+      button {
+        background-color: yellow;
+        border-radius: 5px;
+        height: 30px;
+        outline: none;
+        margin-left: 30%;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      input {
+        border-radius: 10px;
+        outline: none;
+        background-color: black;
+        color: white;
+        padding-left: 5px;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-image: url("cover.jpg");
+        background-position: cover;
+        background-attachment: fixed;
+        background-repeat: none;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>prabin</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="note">
+        <h2>Euro: 100</h2>
+        <br />
+        <input type="number" id="hundredN" /><br />
+        <h4 id="totalHundredN"></h4>
+        <h2>Euro: 50</h2>
+        <br />
+        <input type="number" id="fiftyN" /><br />
+        <h4 id="totalFiftyN"></h4>
+        <br />
+        <h2>Euro: 20</h2>
+        <br />
+        <input type="number" id="twentyN" /><br />
+        <h4 id="totalTwentyN"></h4>
+        <br />
+        <h2>Euro: 10</h2>
+        <input type="number" id="tenN" /><br />
+        <h4 id="totalTenN"></h4>
+        <br />
+        <h2>Euro: 5</h2>
+        <br />
+        <input type="number" id="fiveN" /><br />
+        <h4 id="totalfiveN"></h4>
+        <div class="totalContainer">
+          <input
+            type="number"
+            id="total"
+            disabled=""
+            placeholder="Press Submit For Total"
+          />
+          <button onclick="total()">submit</button>
+        </div>
+      </div>
+
+      <div id="coins">
+        <h2>Coins: 2</h2>
+        <br />
+        <input type="number" id="twoC" /><br />
+        <h4 id="totalTwoC"></h4>
+        <h2>Coins: 1</h2>
+        <br />
+        <input type="number" id="oneC" /><br />
+        <h4 id="totalOneC"></h4>
+        <br />
+        <h2>Cents: 50</h2>
+        <br />
+        <input type="number" id="fiftyC" /><br />
+        <h4 id="totalFiftyC"></h4>
+        <br />
+        <h2>Cents: 20</h2>
+        <br />
+        <input type="number" id="twentyC" /><br />
+        <h4 id="totalTwentyC"></h4>
+        <br />
+        <h2>Cents: 10</h2>
+        <br />
+        <input type="number" id="tenC" /><br />
+        <h4 id="totalTenC"></h4>
+        <br />
+        <h2>Cents: 5</h2>
+        <br />
+        <input type="number" id="fiveC" />
+        <h4 id="totalFiveC"></h4>
+      </div>
+    </div>
+    <script>
+      var euroTwo = function() {
+        var numHundredN = document.getElementById("hundredN").value * 100;
+        var numFiftyN = document.getElementById("fiftyN").value * 50;
+        var numTwentyN = document.getElementById("twentyN").value * 20;
+        var numTenN = document.getElementById("tenN").value * 10;
+        var numFiveN = document.getElementById("fiveN").value * 5;
+        var numOneC = document.getElementById("oneC").value * 1;
+        var numTwoC = document.getElementById("twoC").value * 2;
+        var numFiftyC = document.getElementById("fiftyC").value * 0.5;
+        var numTwentyC = document.getElementById("twentyC").value * 0.2;
+        var numTenC = document.getElementById("tenC").value * 0.1;
+        var numFiveC = document.getElementById("fiveC").value * 0.05;
+
+        document.getElementById("totalHundredN").innerHTML = numHundredN;
+        document.getElementById("totalFiftyN").innerHTML = numFiftyN;
+        document.getElementById("totalTwentyN").innerHTML = numTwentyN;
+        document.getElementById("totalTenN").innerHTML = numTenN;
+        document.getElementById("totalfiveN").innerHTML = numFiveN;
+        document.getElementById("totalTwoC").innerHTML = numTwoC;
+        document.getElementById("totalOneC").innerHTML = numOneC;
+        document.getElementById("totalFiftyC").innerHTML = numFiftyC;
+        document.getElementById("totalTwentyC").innerHTML = numTwentyC;
+        document.getElementById("totalTenC").innerHTML = numTenC;
+        document.getElementById("totalFiveC").innerHTML = numFiveC;
+      };
+      setInterval(euroTwo, 500);
+
+      function total() {
+        var numHundredN = document.getElementById("hundredN").value * 100;
+        var numFiftyN = document.getElementById("fiftyN").value * 50;
+        var numTwentyN = document.getElementById("twentyN").value * 20;
+        var numTenN = document.getElementById("tenN").value * 10;
+        var numFiveN = document.getElementById("fiveN").value * 5;
+        var numOneC = document.getElementById("oneC").value * 1;
+        var numTwoC = document.getElementById("twoC").value * 2;
+        var numFiftyC = document.getElementById("fiftyC").value * 0.5;
+        var numTwentyC = document.getElementById("twentyC").value * 0.2;
+        var numTenC = document.getElementById("tenC").value * 0.1;
+        var numFiveC = document.getElementById("fiveC").value * 0.05;
+
+        document.getElementById("total").value =
+          numHundredN +
+          numFiftyN +
+          numTwentyN +
+          numTenN +
+          numFiveN +
+          numOneC +
+          numTwoC +
+          numFiftyC +
+          numTwentyC +
+          numTenC +
+          numFiveC;
+      }
+    </script>
+  </body>
+</html>
