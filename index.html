@@ -61,6 +61,12 @@
         font-family: "Open Sans", sans-serif;
         font-family: "Dancing Script", cursive;
       }
+      #total {
+        color: blue;
+      }
+      #totalSale {
+        color: blue;
+      }
     </style>
     <meta charset="UTF-8" />
     <title>prabin</title>
@@ -91,13 +97,14 @@
         <input type="number" id="fiveN" /><br />
         <h4 id="totalfiveN"></h4>
         <div class="totalContainer">
+          <h2>T.Amount :- <span id="total"></span></h2>
           <input
             type="number"
-            id="total"
-            disabled=""
-            placeholder="Press Submit For Total"
+            placeholder="Opening Amount Of Till"
+            id="openingAmountTill"
           />
-          <button onclick="total()">submit</button>
+          <button onclick="total(),grandT()">submit</button>
+          <h2>T.Sale:-<span id="totalSale"></span></h2>
         </div>
         <div class="user">
           <h2>Concept:-</h2>
@@ -177,7 +184,7 @@
         var numTenC = document.getElementById("tenC").value * 0.1;
         var numFiveC = document.getElementById("fiveC").value * 0.05;
 
-        document.getElementById("total").value =
+        document.getElementById("total").innerHTML =
           numHundredN +
           numFiftyN +
           numTwentyN +
@@ -189,6 +196,13 @@
           numTwentyC +
           numTenC +
           numFiveC;
+      }
+      // grand total
+      function grandT() {
+        var totalAmount = document.getElementById("total").innerHTML;
+        var openingAmount = document.getElementById("openingAmountTill").value;
+        document.getElementById("totalSale").innerHTML =
+          totalAmount - openingAmount;
       }
     </script>
   </body>
